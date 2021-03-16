@@ -1,0 +1,1821 @@
+<div class="page">
+
+   <div class="navbar" style="background-color: white; height: 30px;">
+         <span id="search_form" class="searchbar" style="display: block;
+    margin-top: 0em;">
+          <div class="searchbar-inner">
+            <div class="searchbar-input-wrap">
+              <input id="search_form_input" type="search" placeholder="Search">
+              <i class="searchbar-icon"></i>
+            </div>
+            <a href="#" style="margin: 15px;" onclick="showAddressesForSearch();">
+              <i class="icon f7-icons ios-only">arrow_right</i>
+              <i class="icon material-icons md-only">arrow_forward</i>
+            </a>
+          </div>
+        </span>
+      </div>
+  <div class="toolbar tabbar" style="background-color: #fff; border-top: 1px solid; border-top-color: #2b58bf; margin-top: -10px;">
+    <div class="toolbar-inner">
+
+      <a href="#tab-1"  id="services_menu" class="tab-link tab-link-active" style="font-size: 12px; font-weight: 600;">SERVICES</a>
+
+      <a href="#tab-2" id="tracking_menu"  class="tab-link" style="font-size: 12px; font-weight: 600;">TRACK</a>
+
+      <a href="#tab-3" id="addressses_menu" onclick="showAddressesPage();" class="tab-link" style="font-size: 12px; font-weight: 600;">ADDRESSES</a>
+
+      <a href="#tab-4"  id="orders_menu" onclick="showOrdersPage();" class="tab-link" style="font-size: 12px; font-weight: 600;">ORDERS</a>
+
+      <a href="#tab-5"  id="profile_menu" onclick="showProfilePage();" class="tab-link" style="font-size: 12px; font-weight: 600;">PROFILE</a>
+    </div>
+  </div>
+  <div class="tabs-swipeable-wrap">
+    <div class="tabs">
+    <!--Services-->
+      <div id="tab-1" class="page-content tab tab-active">
+      <div class="list media-list">
+      <ul>
+        <li><a href="#" class="item-link item-content popup-open"  data-popup=".local">
+            <div class="item-media"><img src="img/reg1.jpg" style="border-radius: 50%;" width="44"/></div>
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">Local</div>
+              </div>
+              <div class="item-subtitle">Deliveries within a region or state</div>
+            </div>
+          </a>
+        </li> 
+         <li><a href="#" class="item-link item-content">
+            <div class="item-media"><img src="img/reg.jpg" style="border-radius: 50%;" width="44"/></div>
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">Inter-Regional</div>
+              </div>
+              <div class="item-subtitle">Deliveries across a region or state</div>
+            </div>
+          </a>
+        </li> 
+        <li><a href="#" class="item-link item-content">
+            <div class="item-media"><img src="img/inter.png" style="border-radius: 50%;" width="44"/></div>
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">International</div>
+              </div>
+              <div class="item-subtitle">Deliveries across countries</div>
+            </div>
+          </a>
+        </li> 
+        <li><a href="#" class="item-link item-content popup-open"  data-popup=".buyforme">
+            <div class="item-media">
+<img src="img/err.jpg" style="border-radius: 50%;" width="44"/> </div>          
+ <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">Buy-For-Me</div>
+              </div>
+              <div class="item-subtitle">Let us do your errands for you</div>
+            </div>
+          </a>
+        </li>
+         <li><a href="#" class="item-link item-content popup-open"  data-popup=".gas">
+            <div class="item-media"><img src="img/gas.jpg" style="border-radius: 50%;" width="44"/></div>
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">Gas Fill-Up</div>
+              </div>
+              <div class="item-subtitle">Get your gas cylinder filled</div>
+            </div>
+          </a>
+        </li> 
+        <li><a href="#" class="item-link item-content popup-open"  data-popup=".month">
+            <div class="item-media"><img src="img/mon.jpg" style="border-radius: 50%;" width="44"/></div>
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">Monthly Subscriptions</div>
+              </div>
+              <div class="item-subtitle">Pay for a month's worth of deliveries</div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+      </div>
+          <!--Track-->
+
+      <div id="tab-2" class="page-content tab">
+        <div class="block">
+        <li style="width: 100%" class="item-content item-input">
+          <div class="item-inner">
+            <div class="item-title item-floating-label">Type Ferry Address To Track</div>
+            <div class="item-input-wrap">
+              <input type="text" placeholder="Type Ferry Address">
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+          <div id="map" style="width: 100%; height: 500px;"></div>
+        </div>
+      </div>
+          <!--Address-->
+
+      <div id="tab-3" class="page-content tab">
+      <!--<p style="margin-top: -10px;" class="block">Popular</p> -->
+       <div class="row" id="popular_rows">
+
+      </div>
+      <!-- <a href="#" style="float: right;" class="block">See More</a><br> -->
+              <center><button onclick="setBusinessOldInfo();" class="col button button-outline popup-open"  data-popup=".addbiz" style="width: 70%;"> My Business</button>
+</center>
+          <div class="block-title">My Addresses</div>
+             <div class="list media-list">
+      <ul id="my_true_addresses">
+      </ul>
+    </div>
+    <div class="block-title">Businesses</div>
+                <div class="list media-list">
+      <ul  id="business_addresses">
+      </ul>
+    </div>
+      </div>
+          <!--Orders-->
+
+            <div id="tab-4" class="page-content tab">
+              <div class="list media-list">
+      <ul id="my_orders">
+         
+      </ul>
+    </div>
+      </div>  
+          <!--Profile-->
+   
+       <div id="tab-5" class="page-content tab">
+        <div class="block">
+           <div style="width: 250px; height: 250px; margin: 0 auto;">
+            <img src="img/default.png" id="real_image" style="width: 100%; border-radius: 50%;">
+          </div></div>
+              <div class="list">
+      <ul>
+        <li>
+          <a href="#" class="link item-content">
+            <div class="item-media"> 
+            <i class="icon f7-icons ios-only">person</i>
+           <i class="icon material-icons md-only">person</i>
+           </div>
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Name</div>
+                <span id="page_profile_my_name">Loading...</span>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="link item-content">
+            <div class="item-media">
+            <i class="icon f7-icons ios-only">phone</i>
+           <i class="icon material-icons md-only">phone_android</i>
+           </div>
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Phone</div>
+                <span id="page_profile_my_phone">Loading...</span>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="link item-content">
+            <div class="item-media">
+            <i class="icon f7-icons ios-only">email</i>
+           <i class="icon material-icons md-only">mail_outline</i>
+          </div>
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Country</div>
+                <span id="page_profile_my_country">Loading...</span>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="link item-content">
+            <div class="item-media">
+             <i class="icon f7-icons ios-only">graph_round</i>
+           <i class="icon material-icons md-only">apps</i>
+        </div>
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">App Version</div>
+                <span id="page_profile_my_appversion">Loading...</span>
+              </div>
+            </div>
+          </a>
+        </li>
+                <li>
+          <a href="#" class="item-link item-content popup-open"  data-popup=".editbiz">
+            <div class="item-media">
+                  <i class="icon f7-icons ios-only">persons</i>
+           <i class="icon material-icons md-only">business</i>
+       </div>
+            <div class="item-inner" onclick="setBusinessOldInfo();">
+              <div class="item-title">
+                <div class="item-header"></div>
+              Business Page              
+              </div>
+            </div>
+          </a>
+        </li>
+         <li>
+          <a href="#" class="item-link item-content balance">
+            <div class="item-media">
+            <img src="img/cc.jpg" style="border-radius: 50%;" width="30"/>
+       </div>
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Check Balance</div>
+                Monthly Subscription
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="item-link item-content popup-open"  data-popup=".contact">
+            <div class="item-media">
+                  <i class="icon f7-icons ios-only">compose</i>
+           <i class="icon material-icons md-only">mode_edit</i>
+       </div>
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header"></div>
+              Contact Ferry              
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+      </div>
+    </div>
+  </div>
+      <!--bubble-->
+
+    <div onclick="getLocation();" class="fab fab-right-bottom">
+    <a href="#" style="background-color: #2b58bf;" class="popup-open link" data-popup=".demo-popup">
+      <i class="icon f7-icons ios-only">compass</i>
+      <i class="icon material-icons md-only">gps_fixed</i>
+    </a>
+  </div>
+
+<!--get ferry address popup-->
+  <div class="popup demo-popup">
+      <div class="page">
+        <div class="navbar no-shadow"  style="background-color: #fff;">
+          <div class="navbar-inner">
+            <div class="title">Ferry Address</div>
+            <div class="right"><a href="#" class="link popup-close"><i class="icon f7-icons ios-only">close</i>
+          <i class="icon material-icons md-only" style="display: inline;">close</i></a></div>
+          </div>
+        </div>
+        <div class="page-content">
+          <div class="block">
+            <p style="text-align: center; margin-top: -20px;">
+              <span id="address_picked_title" style="text-transform: uppercase; color: #2b58bf; font-weight: 600;">Please wait, Ferry is picking this location</span>
+             <br>
+           </p>
+  <div style="width: 250px; height: 250px; margin: 0 auto; text-align: center;">
+            <img src="img/ferryad1.png" style="width: 70%; border-radius: 50%;">
+          </div>
+      <div class="list no-hairlines-md" style="margin-top: 0px;">
+      <ul>
+        <li class="item-content item-input">
+          <div class="item-inner">
+            <div class="item-title item-floating-label">Address Name You Can Easily Remember</div>
+            <div class="item-input-wrap">
+              <input id="this_address_name" type="text" placeholder="Your name">
+              <span class="input-clear-button"></span>
+               <div class="item-input-info">eg. home, office</div>
+            </div>
+          </div>
+        </li>
+        <li class="item-content item-input">
+          <div class="item-inner">
+            <div class="item-title item-floating-label">Address Phone Number</div>
+            <div class="item-input-wrap">
+              <input id="this_address_phone" type="tel" placeholder="Address Phone">
+              <span class="input-clear-button"></span>
+               <div class="item-input-info">optional</div>
+            </div>
+          </div>
+        </li>
+     </ul>
+     </div>
+        <button onclick="getFerryAddress();" class="col button button-outline button-round" style="border-color: #2b58bf; color: #2b58bf;">Save</button>
+        </div>
+      </div>
+    </div>
+    </div>
+
+<!--ferry address page-->
+
+  <div class="popup address">
+      <div class="page" style="background-image: url(img/adres.png); background-repeat: no-repeat;
+    background-size: contain;">
+        <div class="navbar no-shadow"  style="background:rgba(255, 255, 255, .7);">
+          <div class="navbar-inner">
+            <div class="title">My Addresses</div>
+            <div class="right"><a href="#" class="link popup-close"><i class="icon f7-icons ios-only">close</i>
+          <i class="icon material-icons md-only" style="display: inline;">close</i></a></div>
+          </div>
+        </div>
+        <div class="page-content">
+          <div class="block">
+          <div class="list" style="margin-top: 150px;">
+      <ul>
+        <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Name</div>
+                <span id="ferry_address_name">Loading...</span>
+              </div>
+            </div>
+          </a>
+        </li>
+         <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Address</div>
+                <span id="ferry_address_address">Loading...</span>
+              </div>
+            </div>
+          </a>
+        </li>    
+        <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Phone</div>
+                <span id="ferry_address_phone">Loading...</span>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Location</div>
+                <span id="ferry_address_loc">Loading...</span>
+              </div>
+            </div>
+          </a>
+        </li>
+       
+      </ul>
+    </div>
+      <div class="row" style=" position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;">
+
+    <button id="phone_number_copy_btn" onclick="copyToClipboard(this);" data-copytext = "" class="col button button-fill color-green">
+      COPY PHONE NUMBER
+    </button>
+    <button id="ferry_address_copy_btn" onclick="copyToClipboard(this);" data-copytext = ""  class="col button button-fill color-blue">
+      COPY FERRY ADDRESS
+    </button>
+    <!--<button  id="verify_btn" class="col button button-fill color-gray">
+      VERIFY ADDRESS
+    </button>
+  -->
+     </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+<!--orders-->
+
+  <div class="popup orders">
+      <div class="page">
+        <div class="navbar no-shadow"  style="background-color: #fff;">
+          <div class="navbar-inner">
+            <div class="title">My Orders</div>
+            <div class="right"><a href="#" class="link popup-close"><i class="icon f7-icons ios-only">close</i>
+          <i class="icon material-icons md-only" style="display: inline;">close</i></a></div>
+          </div>
+        </div>
+        <div class="page-content">
+          <div class="block">
+          <div class="list">
+      <ul>
+        <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Type</div>
+                Local
+              </div>
+            </div>
+          </a>
+        </li>
+         <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Item</div>
+                food
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+           <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Pickup Location</div>
+               Adenta
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Destination</div>
+                Accra, Ghana
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Receivers Details</div>
+                Kofi | 08432912
+              </div>
+            </div>
+          </a>
+        </li>
+         <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Status</div>
+               Complete
+              </div>
+            </div>
+          </a>
+        </li>
+         <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Charge</div>
+               Gh¢30.00
+              </div>
+            </div>
+          </a>
+        </li>
+         <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Order Number</div>
+               4567876543234
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+      <div class="row">
+        <button class="col button button-fill color-blue"> 
+       <i class="icon f7-icons ios-only">tabs</i>
+      <i class="icon material-icons md-only">content_copy</i></button>
+       </button>
+        <button class="col button button-fill color-red">
+       Report </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+<!--monthly subscription-->
+
+ <div class="popup month">
+      <div class="page">
+        <div class="navbar no-shadow"  style="background-color: #fff;">
+          <div class="navbar-inner">
+            <div class="title">Monthly Subscription</div>
+            <div class="right"><a href="#" class="link popup-close"><i class="icon f7-icons ios-only">close</i>
+          <i class="icon material-icons md-only" style="display: inline;">close</i></a></div>
+          </div>
+        </div>
+        <div class="page-content">
+          <div class="block">
+ <div class="list media-list">
+      <ul>
+        <li>
+          <a href="#" class="item-link item-content">
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">Regular</div>
+              </div>
+              <div class="item-subtitle">GH¢50</div>
+              <div class="item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus.</div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="item-link item-content">
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">X Bundle</div>
+              </div>
+              <div class="item-subtitle">GH¢50</div>
+              <div class="item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus.</div>
+            </div>
+          </a>
+        </li><li>
+          <a href="#" class="item-link item-content">
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">XX Bundle</div>
+              </div>
+              <div class="item-subtitle">GH¢50</div>
+              <div class="item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus.</div>
+            </div>
+          </a>
+        </li>
+        <li class="item-content item-input">
+          <div class="item-inner">
+            <div class="item-title item-floating-label">Type Your Preffered Amount</div>
+            <div class="item-input-wrap">
+              <input type="text" placeholder="Minimum is gh¢60">
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+  <p>This package is worth 20 deliveires for 100km</p>
+          <button class="col button button-fill button-round">Proceed</button>
+        </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+<div class="popup orders">
+      <div class="page">
+        <div class="navbar no-shadow"  style="background-color: #fff;">
+          <div class="navbar-inner">
+            <div class="title">My Orders</div>
+            <div class="right"><a href="#" class="link popup-close"><i class="icon f7-icons ios-only">close</i>
+          <i class="icon material-icons md-only" style="display: inline;">close</i></a></div>
+          </div>
+        </div>
+        <div class="page-content">
+          <div class="block">
+          <div class="list">
+      <ul>
+        <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Type</div>
+               <span id="this_order_type">Loading...</span>
+              </div>
+            </div>
+          </a>
+        </li>
+         <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Item</div>
+               <span id="this_order_item_desc">Loading...</span>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+           <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Pickup Location</div>
+               <span id="this_order_pickup">Loading...</span>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Destination</div>
+               <span id="this_order_destination">Loading...</span>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Receivers Details</div>
+                <span id="this_order_receiver_name">Loading...</span> | <span id="this_order_receiver_phone">Loading...</span>
+              </div>
+            </div>
+          </a>
+        </li>
+         <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Status</div>
+               <span id="this_order_status">Loading...</span>
+              </div>
+            </div>
+          </a>
+        </li>
+         <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Charge</div>
+               <span id="this_order_charge">Loading...</span>
+              </div>
+            </div>
+          </a>
+        </li>
+         <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Order Number</div>
+               <span id="this_order_id">Loading...</span>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+      <div class="row">
+    <button id="order_id_copy_btn" onclick="copyToClipboard(this);" data-copytext = "" class="col button button-fill color-blue"> 
+       COPY ORDER ID
+    </button>
+       </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+
+<!--business SHOP 1 START-->
+ <div class="popup biz">
+      <div class="page">
+        <div class="navbar no-shadow"  style="background-color: #fff;">
+          <div class="navbar-inner">            
+          <div class="left">
+            <a href="#" class="link popup-close"><i class="icon f7-icons ios-only">close</i>
+              <i class="icon material-icons md-only" style="display: inline;">close</i>
+            </a>
+          </div>
+            <div class="title">Shop</div>
+            <div class="right" ondblclick="emptyCart();" onmousedown="checkLongPressStart();" onmouseup="checkLongPressEnd();" id="real_shopping_cart">
+              <a href="#" class="link"> 
+                <i class="icon f7-icons ios-only">bag<span class="badge color-red" id="cart_item_count_1">0</span></i>
+                <i class="icon material-icons md-only">shopping_cart<span class="badge color-red"  id="cart_item_count_2">0</span></i>
+              </a>
+            </div>
+          
+          </div>
+        </div>
+    <div class="toolbar tabbar" style="background-color: #fff;">
+      <div class="toolbar-inner">
+        <a href="#tab-a" id="bness_info_1_tab_1" class="tab-link tab-link-active">ABOUT</a>
+        <a href="#tab-b" id="bness_info_1_tab_2" onclick="showMenuItemsBuyableInfo('3');" class="tab-link">MENU</a>
+      </div>
+    </div>
+    <div class="tabs">
+      <div id="tab-a" class="page-content tab tab-active">
+          <div class="list">
+      <ul>
+        <li>
+          <div class="item-content">
+            <div class="item-media"><img  id="shop_logo" src="img/logo.png" width="44"/></div>
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title" id="shop_name">Loading...</div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Type</div>
+                <span id="shop_type">Loading...</span>
+              </div>
+            </div>
+          </a>
+        </li>
+         <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Address</div>
+                <span id="shop_ferry_address">Loading...</span>
+              </div>
+            </div>
+          </a>
+        </li>
+         <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Opened</div>
+                <span id="shop_open_close_time">Loading...</span>
+              </div>
+            </div>
+          </a>
+        </li>    
+        <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Phone</div>
+                <span id="shop_phone">Loading...</span>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Location</div>
+                <span id="shop_location_name">Loading...</span>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">About</div>
+                <span id="shop_about">Loading...</span>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div> 
+     <div class="row" style=" position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;">
+    <button id="link_address" class="col button button-fill color-gray"> 
+        LINK
+    </button>
+    <button id="bness_phone_number_copy_btn"  onclick="copyToClipboard(this);" data-copytext = ""  class="col button button-fill color-green">
+      COPY SHOP NUMBER
+    </button>
+    <button id="bness_ferry_address_copy_btn"  onclick="copyToClipboard(this);" data-copytext = ""  class="col button button-fill color-blue">
+      COPY FERRY ADDRESS NUMBER
+    </button>
+     </div>
+      </div>
+      <div id="tab-b" class="page-content tab">
+          <div class="block-title">Swipe item to the left to enter quantity wanted and add to cart</div>
+          <div class="block-title">Long press the shopping cart icon to empty your cart</div>
+        <div class="list media-list">
+      <ul id="menu_list3">
+
+      </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+<!--deliveries-->
+
+ <div class="popup local">
+      <div class="page">
+        <div class="navbar no-shadow"  style="background-color: #fff;">
+          <div class="navbar-inner">
+             <div class="left"><a href="#" class="link popup-close"><i class="icon f7-icons ios-only">close</i>
+          <i class="icon material-icons md-only" style="display: inline;">close</i></a></div>
+            <div class="title">Local</div>
+            <div class="right"><a href="#" class="link"><i class="icon f7-icons ios-only">add_round</i>
+          <i class="icon material-icons md-only" style="display: inline;">add</i></a></div>
+          </div>
+        </div>
+        <div class="page-content">
+<!-- pickup-->
+          <div class="list no-hairlines-md">
+      <ul>
+        <li class="item-content item-input">
+          <div class="item-media">
+            <i class="icon f7-icons ios-only">compass</i>
+          <i class="icon material-icons md-only" style="display: inline;">location_on</i>
+          </div>
+          <div class="item-inner">
+            <div class="item-title item-label">PickUp Location</div>
+            <div class="item-input-wrap">
+              <input type="text" placeholder="eg. ferry9666 or Adenta Accra">
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+                <p style="text-align: center;">Madina Zongo</p>
+               <center><button class="col button button-fill button-round" style="width: 50%;">Proceed</button></center> 
+    </ul>
+    </div>
+<!--destination-->
+<div class="list no-hairlines-md">
+      <ul>
+        <li class="item-content item-input">
+          <div class="item-media">
+            <i class="icon f7-icons ios-only">compass</i>
+          <i class="icon material-icons md-only" style="display: inline;">location_on</i>
+          </div>
+          <div class="item-inner">
+            <div class="item-title item-label">Destination Location</div>
+            <div class="item-input-wrap">
+              <input type="text" placeholder="eg. ferry9666 or Adenta Accra">
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+        <p style="text-align: center;">Madina Zongo</p>
+               <center><button class="col button button-fill button-round" style="width: 50%;">Proceed</button></center> 
+    </ul>
+    </div>
+
+<!-- receivers info-->
+    <div class="list no-hairlines-md">
+      <ul>
+        <li class="item-content item-input">
+           <div class="item-inner">
+            <div class="item-title item-floating-label">Receiver's Name</div>
+            <div class="item-input-wrap">
+              <input type="text" placeholder="Receiver's Name">
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+        <li class="item-content item-input">
+           <div class="item-inner">
+            <div class="item-title item-floating-label">Receiver's Phone Number</div>
+            <div class="item-input-wrap">
+              <input type="tel" placeholder="Receiver's Phone Number">
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+        <li class="item-content item-input">
+            <div class="item-inner">
+            <div class="item-title item-floating-label">Item Short Description</div>
+            <div class="item-input-wrap">
+              <textarea class="resizable" placeholder="Item Short Description"></textarea>
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+                <li class="item-content item-input">
+           <div class="item-inner">
+            <div class="item-title item-floating-label">Any Other Specifications(optional)</div>
+            <div class="item-input-wrap">
+              <textarea class="resizable" placeholder="Any Other Specifications(optional)"></textarea>
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+               <center><button class="col button button-fill button-round" style="width: 50%;">Proceed</button></center> 
+
+      </ul>
+    </div>
+
+<!--Receipt-->
+
+              <div class="list">
+      <ul>
+        <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Type</div>
+                Local
+              </div>
+            </div>
+          </a>
+        </li>
+         <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Item</div>
+                food
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+           <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Pickup Location</div>
+               Adenta
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Destination</div>
+                Accra, Ghana
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Receivers Details</div>
+                Kofi | 08432912
+              </div>
+            </div>
+          </a>
+        </li>
+         <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Specification</div>
+               zxcv
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Order Number</div>
+               4567876543234
+              </div>
+            </div>
+          </a>
+        </li>
+         <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Charge</div>
+               Gh¢30.00
+              </div>
+            </div>
+          </a>
+        </li>
+         
+      </ul>
+
+       <div class="row">
+        <button class="col button button-fill color-green">
+        <i class="icon f7-icons ios-only">arrow_left</i>
+      <i class="icon material-icons md-only">arrow_back</i></button>
+        <button class="col button button-fill color-gray"> 
+        SUBSCRIPTION
+    </button>
+        <button class="col button button-fill color-red">
+        PAY</button>
+     </div>
+    </div>
+
+
+      </div>
+    </div>
+    </div>
+<!--buy for me-->
+
+<div class="popup buyforme">
+      <div class="page">
+        <div class="navbar no-shadow"  style="background-color: #fff;">
+          <div class="navbar-inner">
+             <div class="left"><a href="#" class="link popup-close"><i class="icon f7-icons ios-only">close</i>
+          <i class="icon material-icons md-only" style="display: inline;">close</i></a></div>
+            <div class="title">Buy For Me</div>
+           <!-- <div class="right"><a href="#" class="link"><i class="icon f7-icons ios-only">add_round</i>
+          <i class="icon material-icons md-only" style="display: inline;">add</i></a></div>-->
+          </div>
+        </div>
+        <div class="page-content">
+<!-- pickup-->
+          <div class="list no-hairlines-md">
+      <ul>
+      <li class="item-content item-input">
+          <div class="item-inner">
+            <div class="item-title item-label">Name of Shop</div>
+            <div class="item-input-wrap">
+              <input type="text" placeholder="eg. abc Restaurant, qwe boutique">
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+        <li class="item-content item-input">
+          <div class="item-inner">
+            <div class="item-title item-label">PickUp Location</div>
+            <div class="item-input-wrap">
+              <input type="text" placeholder="eg. ferry9666 or Adenta Accra">
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+                        <p style="text-align: center;">Madina Zongo</p>
+         <li class="item-content item-input">
+            <div class="item-inner">
+            <div class="item-title item-floating-label">List Of Items</div>
+            <div class="item-input-wrap">
+              <textarea class="resizable" placeholder="List Of Items"></textarea>
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+         <li class="item-content item-input">
+          <div class="item-inner">
+            <div class="item-title item-label">Total Price of Items</div>
+            <div class="item-input-wrap">
+              <input type="text" placeholder="figures only">
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+                       <p>You can look at the Available Shops at the Addresses Tab</p> 
+               <center><button class="col button button-fill button-round" style="width: 50%;">Proceed</button></center>
+    </ul>
+    </div>
+<!--destination-->
+<div class="list no-hairlines-md">
+      <ul>
+        <li class="item-content item-input">
+          <div class="item-inner">
+            <div class="item-title item-label">Destination Location</div>
+            <div class="item-input-wrap">
+              <input type="text" placeholder="eg. ferry9666 or Adenta Accra">
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+        
+        <p style="text-align: center;">Madina Zongo</p>
+               <center><button class="col button button-fill button-round" style="width: 50%;">Proceed</button></center> 
+    </ul>
+    </div>
+
+<!-- receivers info-->
+    <div class="list no-hairlines-md">
+      <ul>
+        <li class="item-content item-input">
+           <div class="item-inner">
+            <div class="item-title item-floating-label">Receiver's Name</div>
+            <div class="item-input-wrap">
+              <input type="text" placeholder="Receiver's Name">
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+        <li class="item-content item-input">
+           <div class="item-inner">
+            <div class="item-title item-floating-label">Receiver's Phone Number</div>
+            <div class="item-input-wrap">
+              <input type="tel" placeholder="Receiver's Phone Number">
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+                <li class="item-content item-input">
+           <div class="item-inner">
+            <div class="item-title item-floating-label">Any Other Specifcations</div>
+            <div class="item-input-wrap">
+              <textarea class="resizable" placeholder="Any Other Specifcations"></textarea>
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+               <center><button class="col button button-fill button-round" style="width: 50%;">Proceed</button></center> 
+
+      </ul>
+    </div>
+
+<!--Receipt-->
+
+              <div class="list">
+      <ul>
+        <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Type</div>
+                Buy For Me
+              </div>
+            </div>
+          </a>
+        </li>
+         <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Shop Name</div>
+                abc retaurant
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+           <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">List of Items</div>
+               orange, pawpaw
+              </div>
+            </div>
+          </a>
+        </li><li>
+           <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Shop Location</div>
+               Adenta
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Destination</div>
+                Accra, Ghana
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Receivers Details</div>
+                Kofi | 08432912
+              </div>
+            </div>
+          </a>
+        </li>
+         <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Specification</div>
+               zxcv
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Order Number</div>
+               4567876543234
+              </div>
+            </div>
+          </a>
+        </li>
+         <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Price of Items</div>
+               Gh¢30.00
+              </div>
+            </div>
+          </a>
+        </li>
+         <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Delivery Charge</div>
+               Gh¢30.00
+              </div>
+            </div>
+          </a>
+        </li>
+         <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Total Charge</div>
+               Gh¢30.00
+              </div>
+            </div>
+          </a>
+        </li>
+         
+      </ul>
+
+       <div class="row">
+        <button class="col button button-fill color-green">
+        <i class="icon f7-icons ios-only">arrow_left</i>
+      <i class="icon material-icons md-only">arrow_back</i></button>
+        <button class="col button button-fill color-gray"> 
+        SUBSCRIPTION
+    </button>
+        <button class="col button button-fill color-red">
+        PAY</button>
+     </div>
+    </div>
+
+
+      </div>
+    </div>
+    </div>
+
+
+<!--gas-->
+<div class="popup gas">
+      <div class="page">
+        <div class="navbar no-shadow"  style="background-color: #fff;">
+          <div class="navbar-inner">
+            <div class="title">Gas Refill</div>
+            <div class="right"><a href="#" class="link popup-close"><i class="icon f7-icons ios-only">close</i>
+          <i class="icon material-icons md-only" style="display: inline;">close</i></a></div>
+          </div>
+        </div>
+        <div class="page-content">
+<!-- pickup-->
+          <div class="list no-hairlines-md">
+      <ul>
+        <li class="item-content item-input">
+          <div class="item-media">
+            <i class="icon f7-icons ios-only">compass</i>
+          <i class="icon material-icons md-only" style="display: inline;">location_on</i>
+          </div>
+          <div class="item-inner">
+            <div class="item-title item-label">PickUp Location</div>
+            <div class="item-input-wrap">
+              <input type="text" placeholder="eg. ferry9666 or Adenta Accra">
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+                <p style="text-align: center;">Madina Zongo</p>
+               <center><button class="col button button-fill button-round" style="width: 50%;">Proceed</button></center> 
+    </ul>
+    </div>
+<!--gas size-->
+    <div class="block-title">Size of Cylinder</div>
+    <div class="list media-list">
+      <ul>
+      <li>
+          <a href="#" class="item-link item-content">
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">John Doe (via Twitter)</div>
+                <div class="item-after"></div>
+              </div>
+              <div class="item-subtitle">John Doe (@_johndoe) mentioned you on Twitter!</div>
+              <div class="item-text"></div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="item-link item-content">
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">John Doe (via Twitter)</div>
+                <div class="item-after"></div>
+              </div>
+              <div class="item-subtitle">John Doe (@_johndoe) mentioned you on Twitter!</div>
+              <div class="item-text"></div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="item-link item-content">
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">John Doe (via Twitter)</div>
+                <div class="item-after"></div>
+              </div>
+              <div class="item-subtitle">John Doe (@_johndoe) mentioned you on Twitter!</div>
+              <div class="item-text"></div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+<!-- receivers info-->
+    <div class="list no-hairlines-md">
+      <ul>
+        <li class="item-content item-input">
+           <div class="item-inner">
+            <div class="item-title item-floating-label">Receiver's Name</div>
+            <div class="item-input-wrap">
+              <input type="text" placeholder="Receiver's Name">
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+        <li class="item-content item-input">
+           <div class="item-inner">
+            <div class="item-title item-floating-label">Receiver's Phone Number</div>
+            <div class="item-input-wrap">
+              <input type="tel" placeholder="Receiver's Phone Number">
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+                <li class="item-content item-input">
+           <div class="item-inner">
+            <div class="item-title item-floating-label">Any Other Specifcations(optional)</div>
+            <div class="item-input-wrap">
+              <textarea class="resizable" placeholder="Any Other Specifcations"></textarea>
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+               <center><button class="col button button-fill button-round" style="width: 50%;">Proceed</button></center> 
+
+      </ul>
+    </div>
+
+<!--Receipt-->
+
+              <div class="list">
+      <ul>
+        <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Type</div>
+                Gas Refill
+              </div>
+            </div>
+          </a>
+        </li>
+         <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Cyliner Size</div>
+                300
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+           <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Pickup Location</div>
+               Adenta
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Receivers Details</div>
+                Kofi | 08432912
+              </div>
+            </div>
+          </a>
+        </li>
+         <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Specification</div>
+               zxcv
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Order Number</div>
+               4567876543234
+              </div>
+            </div>
+          </a>
+        </li>
+         <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Gas Price</div>
+               Gh¢30.00
+              </div>
+            </div>
+          </a>
+        </li>
+         <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Delivery Charge</div>
+               Gh¢30.00
+              </div>
+            </div>
+          </a>
+        </li> <li>
+          <a href="#" class="link item-content">
+            <div class="item-inner">
+              <div class="item-title">
+                <div class="item-header">Total Charge</div>
+               Gh¢30.00
+              </div>
+            </div>
+          </a>
+        </li>
+         
+      </ul>
+
+       <div class="row">
+        <button class="col button button-fill color-green">
+        <i class="icon f7-icons ios-only">arrow_left</i>
+      <i class="icon material-icons md-only">arrow_back</i></button>
+        <button class="col button button-fill color-gray"> 
+        SUBSCRIPTION
+    </button>
+        <button class="col button button-fill color-red">
+        PAY</button>
+     </div>
+    </div>
+
+
+      </div>
+    </div>
+    </div>
+
+
+<!--edit business-->
+
+ <div class="popup addbiz">
+      <div class="page">
+        <div class="navbar no-shadow"  style="background-color: #fff;">
+          <div class="navbar-inner">            
+            <div class="title">Edit SHOP</div>
+            <div class="right"><a href="#" class="link popup-close"><i class="icon f7-icons ios-only">close</i>
+          <i class="icon material-icons md-only" style="display: inline;">close</i></a></div>
+          </div>
+        </div>
+    <div class="toolbar tabbar" style="background-color: #fff;">
+      <div class="toolbar-inner">
+        <a href="#tab2-i" class="tab-link tab-link-active">ABOUT</a>
+        <a href="#tab2-ii" onclick="showMenuItemInfo('');" class="tab-link">MENU</a>
+        <a href="#tab3-ii" class="tab-link">ADD ITEM TO SHOP</a>
+      </div>
+    </div>
+    <div class="tabs">
+      <div id="tab2-i" class="page-content tab tab-active">
+      <label for="imgInp2"><div style="border: 1px solid ; border-color: #d9d9d9; width: 250px; height: 250px; margin: 0 auto; border-radius: 50%; cursor: pointer;">
+
+            <img  id="blah2" src="img/default.png" alt="your image" style="width: 100%; height: 100%; border-radius: 50%; cursor: pointer;"></div><br><br>
+
+            <input onchange="readURL(this, 'blah2')" type='file' style="display: none;"  id="imgInp2" />
+            
+            </label>
+    <div class="list no-hairlines-md">
+      <ul>
+        <li class="item-content item-input">
+          <div class="item-inner">
+            <div class="item-title item-floating-label">Name</div>
+            <div class="item-input-wrap">
+              <input type="text" id="my_business_name2" placeholder="Your name">
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a class="item-link smart-select smart-select-init" data-open-in="sheet">
+            <select  id="my_business_type2" name="Choose Country">
+            <option value="" selected>Choose Shop Type</option>
+            <option value="Restaurant">Restaurant</option>
+            <option value="Groceries">Groceries</option>
+            </select>
+            <div class="item-content">
+              <div class="item-inner">
+                <div class="item-title">Shop Type</div>
+              </div>
+            </div>
+          </a>
+        </li>
+        </li>
+        <li class="item-content item-input">
+           <div class="item-inner">
+            <div class="item-title item-floating-label">Ferry Address</div>
+            <div class="item-input-wrap">
+              <input type="text"  id="my_business_ferry_address2" placeholder="Shop Ferry Address">
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+        <li class="item-content item-input">
+             <div class="item-inner">
+            <div class="item-title item-floating-label">Working Opens At (24-hr time)</div>
+            <div class="item-input-wrap">
+              <input type="number" min="0"  id="my_business_start_time2" max="24" placeholder="Working Hours">
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+        <li class="item-content item-input">
+             <div class="item-inner">
+            <div class="item-title item-floating-label">Working Closes At (24-hr time)</div>
+            <div class="item-input-wrap">
+              <input type="number"  id="my_business_close_time2" min="0" max="24" placeholder="Working Hours">
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+        <li class="item-content item-input">
+            <div class="item-inner">
+            <div class="item-title item-floating-label">Shop Phone</div>
+            <div class="item-input-wrap">
+              <input type="tel" id="my_business_phone2" placeholder="Shop phone number">
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+        <li class="item-content item-input">
+           <div class="item-inner">
+            <div class="item-title item-floating-label">About The Shop</div>
+            <div class="item-input-wrap">
+              <textarea class="resizable" id="my_business_desc2" placeholder="About"></textarea>
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+        <center><button onclick="setBusinessInfo('2');" class="col button button-outline" style="width: 70%;">Save</button></center>
+      </ul>
+    </div>
+      </div>
+      <div id="tab3-ii" class="page-content tab">
+      <label for="imgInp3"><div style="border: 1px solid ; border-color: #d9d9d9; width: 250px; height: 250px; margin: 0 auto; border-radius: 50%; cursor: pointer;">
+
+            <img  id="blah3" src="img/buy.png" alt="your image" style="width: 100%; height: 100%; border-radius: 50%; cursor: pointer;"></div><br><br>
+
+            <input onchange="readURL(this, 'blah3')" type='file' style="display: none;"  id="imgInp3" />
+            
+            </label>
+    <div class="list no-hairlines-md">
+      <ul>
+        <li class="item-content item-input">
+          <div class="item-inner">
+            <div class="item-title item-floating-label">Item Name</div>
+            <div class="item-input-wrap">
+              <input type="text" id="menu_item_name" placeholder="Item Name">
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+        <li class="item-content item-input">
+           <div class="item-inner">
+            <div class="item-title item-floating-label">Item Price For One</div>
+            <div class="item-input-wrap">
+              <input type="number" min="1" max="100000"  id="menu_item_price" placeholder="Item Price For One">
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+        <li class="item-content item-input">
+           <div class="item-inner">
+            <div class="item-title item-floating-label">Item Description</div>
+            <div class="item-input-wrap">
+              <textarea class="resizable" id="menu_item_description" placeholder="Item Description"></textarea>
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+        <center><button onclick="addShopItem('');" class="col button button-outline" style="width: 70%;">Save</button></center>
+      </ul>
+    </div>
+      </div>
+      <div id="tab2-ii" class="page-content tab">
+          <div class="block-title">Swipe item to the left for delete option</div>
+             <div class="list media-list">
+      <ul id="menu_list">
+
+      </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+</div>
+<!--add biz-->
+
+ <div class="popup editbiz">
+      <div class="page">
+        <div class="navbar no-shadow"  style="background-color: #fff;">
+          <div class="navbar-inner">            
+            <div class="title">Edit Shop</div>
+            <div class="right"><a href="#" class="link popup-close"><i class="icon f7-icons ios-only">close</i>
+          <i class="icon material-icons md-only" style="display: inline;">close</i></a></div>
+          </div>
+        </div>
+    <div class="toolbar tabbar" style="background-color: #fff;">
+      <div class="toolbar-inner">
+        <a href="#tab-i" class="tab-link tab-link-active">ABOUT</a>
+        <a href="#tab-ii"  onclick="showMenuItemInfo('2');" class="tab-link">MENU</a>
+        <a href="#tab-iii" class="tab-link">ADD ITEM TO SHOP</a>
+      </div>
+    </div>
+    <div class="tabs">
+      <div id="tab-iii" class="page-content tab">
+      <label for="imgInp4"><div style="border: 1px solid ; border-color: #d9d9d9; width: 250px; height: 250px; margin: 0 auto; border-radius: 50%; cursor: pointer;">
+
+            <img  id="blah4" src="img/buy.png" alt="your image" style="width: 100%; height: 100%; border-radius: 50%; cursor: pointer;"></div><br><br>
+
+            <input onchange="readURL(this, 'blah4')" type='file' style="display: none;"  id="imgInp4" />
+            
+            </label>
+    <div class="list no-hairlines-md">
+      <ul>
+        <li class="item-content item-input">
+          <div class="item-inner">
+            <div class="item-title item-floating-label">Item Name</div>
+            <div class="item-input-wrap">
+              <input type="text" id="menu_item_name2" placeholder="Item Name">
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+        <li class="item-content item-input">
+           <div class="item-inner">
+            <div class="item-title item-floating-label">Item Price For One</div>
+            <div class="item-input-wrap">
+              <input type="number" min="1" max="100000"  id="menu_item_price2" placeholder="Item Price For One">
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+        <li class="item-content item-input">
+           <div class="item-inner">
+            <div class="item-title item-floating-label">Item Description</div>
+            <div class="item-input-wrap">
+              <textarea class="resizable" id="menu_item_description2" placeholder="Item Description"></textarea>
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+        <center><button onclick="addShopItem('2');" class="col button button-outline" style="width: 70%;">Save</button></center>
+      </ul>
+    </div>
+      </div>
+      <div id="tab-i" class="page-content tab tab-active">
+      <label for="imgInp"><div style="border: 1px solid ; border-color: #d9d9d9; width: 250px; height: 250px; margin: 0 auto; border-radius: 50%; cursor: pointer;">
+
+            <img  id="blah" src="img/default.png" alt="your image" style="width: 100%; height: 100%; border-radius: 50%; cursor: pointer;"></div><br><br>
+
+            <input onchange="readURL(this, 'blah')" type='file' style="display: none;"  id="imgInp" />
+            
+            </label>
+    <div class="list no-hairlines-md">
+      <ul>
+        <li class="item-content item-input">
+          <div class="item-inner">
+            <div class="item-title item-floating-label">Name</div>
+            <div class="item-input-wrap">
+              <input type="text" id="my_business_name" placeholder="Your name">
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a class="item-link smart-select smart-select-init" data-open-in="sheet">
+            <select  id="my_business_type" name="Choose Country">
+            <option value="" selected>Choose Shop Type</option>
+            <option value="Restaurant">Restaurant</option>
+            <option value="Groceries">Groceries</option>
+            </select>
+            <div class="item-content">
+              <div class="item-inner">
+                <div class="item-title">Shop Type</div>
+              </div>
+            </div>
+          </a>
+        </li>
+        </li>
+        <li class="item-content item-input">
+           <div class="item-inner">
+            <div class="item-title item-floating-label">Ferry Address</div>
+            <div class="item-input-wrap">
+              <input type="text"  id="my_business_ferry_address" placeholder="Shop Ferry Address">
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+        <li class="item-content item-input">
+             <div class="item-inner">
+            <div class="item-title item-floating-label">Working Opens At (24-hr time)</div>
+            <div class="item-input-wrap">
+              <input type="number" min="0"  id="my_business_start_time" max="24" placeholder="Working Hours">
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+        <li class="item-content item-input">
+             <div class="item-inner">
+            <div class="item-title item-floating-label">Working Closes At (24-hr time)</div>
+            <div class="item-input-wrap">
+              <input type="number"  id="my_business_close_time" min="0" max="24" placeholder="Working Hours">
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+        <li class="item-content item-input">
+            <div class="item-inner">
+            <div class="item-title item-floating-label">Shop Phone</div>
+            <div class="item-input-wrap">
+              <input type="tel" id="my_business_phone" placeholder="Shop phone number">
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+        <li class="item-content item-input">
+           <div class="item-inner">
+            <div class="item-title item-floating-label">About The Shop</div>
+            <div class="item-input-wrap">
+              <textarea class="resizable" id="my_business_desc" placeholder="About"></textarea>
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+        <center><button onclick="setBusinessInfo('');" class="col button button-outline" style="width: 70%;">Save</button></center>
+      </ul>
+    </div>
+      </div>
+      <div id="tab-ii" class="page-content tab">
+          <div class="block-title">Swipe item right for delete option</div>
+             <div class="list media-list">
+      <ul id="menu_list2">
+      </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+</div>
+
+<!--contact form-->
+
+ <div class="popup contact">
+      <div class="page">
+        <div class="navbar"  style="background-color: #fff;">
+          <div class="navbar-inner">
+            <div class="title" style="color: #2b58bf;">Contact Us</div>
+            <div class="right"><a href="#" class="link popup-close"><i class="icon f7-icons ios-only">close</i>
+          <i class="icon material-icons md-only" style="display: inline;">close</i></a></div>
+          </div>
+        </div>
+        <div class="page-content">
+          <div class="block">
+            <p class="">Please leave a message and we'll get back to you as soon as we can. Thank you</p>
+ <div class="list inline-labels no-hairlines-md">
+      <ul> 
+<li class="item-content item-input">  
+          <div class="item-inner">
+            <div class="item-input-wrap">
+              <textarea id="thismessage" class="resizable" placeholder="Type Message"></textarea>
+            </div>
+          </div>
+        </li>
+        </ul>
+          </div>
+          <button class="col button button-outline button-round" style="border-color: #2b58bf; color: #1d3456;" onclick="sendMessage();">Send</button>
+
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!---nothing must go under this-->
+</div> 
