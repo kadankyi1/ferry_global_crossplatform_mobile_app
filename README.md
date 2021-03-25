@@ -15,7 +15,7 @@ Ferry allows you to pick locations and name them so that they can easily remembe
 
 ### DOWNLOAD ON GOOGLE PLAYSTORE
 ```
-a href="https://stackoverflow.com/users/9577985/dankyi-anno-kwaku">https://play.google.com/store/apps/details?id=com.ferryglobal.ferry</a> 
+<a href="https://stackoverflow.com/users/9577985/dankyi-anno-kwaku">https://play.google.com/store/apps/details?id=com.ferryglobal.ferry</a> 
 ```
 ## Android Screenshots
 </br>
