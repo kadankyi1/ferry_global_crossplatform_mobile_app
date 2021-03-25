@@ -82,6 +82,6 @@ Ferry allows you to pick locations and name them so that they can easily remembe
 </br>
 ## Authors
 
-* **Dankyi Anno Kwaku** - *FishPot Company Limited*
+* **Dankyi Anno Kwaku**
 
 
