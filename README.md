@@ -1,6 +1,6 @@
 # Ferry - Digital Addresses For Deliveries
 
-**Get deliveries done with no hassle using Ferry.
+**Get deliveries done with no hassle using Ferry.**
 
 Ferry allows you to pick locations and name them so that they can easily remember. It gives each location you pick, a Ferry Address.**
 
