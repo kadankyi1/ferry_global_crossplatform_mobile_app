@@ -13,6 +13,11 @@ Ferry allows you to pick locations and name them so that they can easily remembe
 
 
 
+
+### DOWNLOAD ON iOS STORE
+- <a href="https://apps.apple.com/vg/app/ferryglobal/id1431549981" target="_blank">https://apps.apple.com/vg/app/ferryglobal/id1431549981</a>
+
+
 ### DOWNLOAD ON GOOGLE PLAYSTORE
 - <a href="https://play.google.com/store/apps/details?id=com.ferryglobal.ferry" target="_blank">https://play.google.com/store/apps/details?id=com.ferryglobal.ferry</a>
 
