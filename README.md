@@ -80,7 +80,8 @@ Ferry allows you to pick locations and name them so that they can easily remembe
   </table>
   </div>
 </br>
-## Authors
+
+### Author
 
 * **Dankyi Anno Kwaku**
 
